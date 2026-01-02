@@ -40,44 +40,125 @@
         background: #00cc6a;
       }
 
-      .blog-content {
-        max-width: 800px;
+      .blog-container {
+        display: flex;
+        max-width: 1400px;
         margin: 0 auto;
-        line-height: 1.6;
+        gap: 30px;
+        align-items: flex-start;
+      }
+
+      .sidebar {
+        flex: 0 0 300px;
+        background: #1a1a1a;
+        padding: 25px;
+        border-radius: 10px;
+        position: sticky;
+        top: 20px;
+      }
+
+      .sidebar h3 {
+        color: #00ff88;
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-size: 1.3rem;
+      }
+
+      .sidebar-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .sidebar-list li {
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #333;
+      }
+
+      .sidebar-list li:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .sidebar-list a {
+        color: #f0f0f0;
+        text-decoration: none;
+        transition: color 0.3s;
+        display: block;
+      }
+
+      .sidebar-list a:hover {
+        color: #00ff88;
+      }
+
+      .sidebar-list .date {
+        color: #777;
+        font-size: 0.85rem;
+        margin-top: 5px;
+      }
+
+      .articles-grid {
+        flex: 1;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 25px;
       }
 
       .blog-post {
         background: #1a1a1a;
         padding: 25px;
-        margin: 20px 0;
         border-radius: 10px;
         border-left: 4px solid #00ff88;
+        display: flex;
+        flex-direction: column;
+        aspect-ratio: 1;
+        transition: transform 0.3s, box-shadow 0.3s;
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .blog-post:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 255, 136, 0.2);
       }
 
       .blog-post h2 {
         color: #00ff88;
         margin-top: 0;
+        margin-bottom: 15px;
+        font-size: 1.3rem;
+        line-height: 1.4;
       }
 
       .blog-post .date {
         color: #777;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         margin-bottom: 15px;
       }
 
       .blog-post p {
-        margin: 15px 0;
-      }
-
-      .coming-soon {
-        text-align: center;
-        padding: 60px 20px;
+        margin: 0;
         color: #ccc;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        flex-grow: 1;
       }
 
-      .coming-soon h2 {
-        color: #00ff88;
-        margin-bottom: 20px;
+      @media (max-width: 768px) {
+        .blog-container {
+          flex-direction: column;
+        }
+
+        .sidebar {
+          position: static;
+          flex: 1;
+        }
+
+        .articles-grid {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
   </head>
@@ -87,27 +168,52 @@
       <a href="index.html" class="back-button">← Back to Home</a>
     </div>
 
-    <div class="blog-content">
-      <div class="coming-soon">
-        <h2>Blog Coming Soon!</h2>
-        <p>
-          I'm working on some exciting content about bug bounty hunting,
-          penetration testing, and cybersecurity insights.
-        </p>
-        <p>
-          Stay tuned for detailed write-ups, vulnerability analysis, and
-          security tips!
-        </p>
+    <div class="blog-container">
+      <div class="sidebar">
+        <h3>Recent Articles</h3>
+        <ul class="sidebar-list">
+          <li>
+            <a href="article-build-wifi-deauther.html">Build WiFi Deauther</a>
+            <div class="date">December 2024</div>
+          </li>
+          <li>
+            <a href="article-rubber-ducy-pi-pico.html"
+              >Rubber Ducky with Pi Pico</a
+            >
+            <div class="date">December 2024</div>
+          </li>
+          <!-- More articles can be added here -->
+        </ul>
       </div>
 
-      <!-- Example blog post structure for future use -->
-      <!--
-        <div class="blog-post">
-            <h2>My First Bug Bounty Success</h2>
-            <div class="date">December 2024</div>
-            <p>This is where I'll share my experiences and findings from bug bounty programs...</p>
-        </div>
+      <div class="articles-grid">
+        <a href="article-build-wifi-deauther.html" class="blog-post">
+          <h2>Build WiFi Deauther</h2>
+          <div class="date">December 2024</div>
+          <p>
+            Learn how to build a WiFi deauther using ESP8266 for security
+            testing and network analysis...
+          </p>
+        </a>
+
+        <a href="article-rubber-ducy-pi-pico.html" class="blog-post">
+          <h2>Rubber Ducky with Pi Pico</h2>
+          <div class="date">December 2024</div>
+          <p>
+            Exploring the capabilities of Raspberry Pi Pico as a USB HID device
+            for security testing...
+          </p>
+        </a>
+
+        <!-- More square article cards can be added here -->
+        <!--
+        <a href="article-example.html" class="blog-post">
+          <h2>Article Title</h2>
+          <div class="date">December 2024</div>
+          <p>Article description...</p>
+        </a>
         -->
+      </div>
     </div>
   </body>
 </html>

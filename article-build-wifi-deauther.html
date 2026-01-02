@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Build WiFi Deauther | Isaac's Blog</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #0a0a0a;
+        color: #f0f0f0;
+        padding: 20px;
+        line-height: 1.6;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        color: #00ff88;
+      }
+
+      .back-button {
+        display: inline-block;
+        margin: 20px 0;
+        padding: 10px 18px;
+        background: #00ff88;
+        color: #0a0a0a;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: background 0.3s;
+      }
+
+      .back-button:hover {
+        background: #00cc6a;
+      }
+
+      .article-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .article-meta {
+        color: #777;
+        font-size: 0.9rem;
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #333;
+      }
+
+      .article-content h2 {
+        color: #00ff88;
+        margin-top: 30px;
+        margin-bottom: 15px;
+      }
+
+      .article-content p {
+        margin: 15px 0;
+      }
+
+      .article-content ul {
+        margin: 15px 0;
+        padding-left: 30px;
+      }
+
+      .article-content li {
+        margin: 10px 0;
+      }
+
+      .article-content code {
+        background: #1a1a1a;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: "Courier New", monospace;
+        color: #00ff88;
+      }
+
+      .article-content pre {
+        background: #1a1a1a;
+        padding: 15px;
+        border-radius: 8px;
+        overflow-x: auto;
+        border-left: 4px solid #00ff88;
+      }
+
+      .article-content pre code {
+        background: none;
+        padding: 0;
+        color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Build WiFi Deauther</h1>
+      <a href="blog.html" class="back-button">← Back to Blog</a>
+    </div>
+
+    <div class="article-content">
+      <div class="article-meta"><strong>Published:</strong> December 2024</div>
+
+      <h2>Introduction</h2>
+      <p>
+        A WiFi deauther is a device that can send deauthentication frames to
+        disconnect devices from WiFi networks. This tool is commonly used for
+        security testing, network analysis, and educational purposes to
+        understand WiFi vulnerabilities.
+      </p>
+
+      <h2>What is WiFi Deauthentication?</h2>
+      <p>
+        WiFi deauthentication is a process where a device sends management
+        frames to disconnect clients from an access point. This exploits a
+        vulnerability in the 802.11 WiFi protocol that doesn't require
+        authentication to send deauth frames.
+      </p>
+
+      <h2>Hardware Requirements</h2>
+      <p>To build a WiFi deauther, you'll need:</p>
+      <ul>
+        <li>ESP8266 or ESP32 microcontroller</li>
+        <li>USB cable for programming</li>
+        <li>Breadboard and jumper wires (optional)</li>
+        <li>3.3V power supply or USB power bank</li>
+      </ul>
+
+      <h2>Software Setup</h2>
+      <p>
+        The most popular firmware for WiFi deauthers is based on the ESP8266
+        Deauther project. You'll need to:
+      </p>
+      <ul>
+        <li>Install Arduino IDE or PlatformIO</li>
+        <li>Install ESP8266 board support</li>
+        <li>Download the deauther firmware</li>
+        <li>Flash the firmware to your ESP8266</li>
+      </ul>
+
+      <h2>Basic Configuration</h2>
+      <p>
+        Once flashed, the device creates its own WiFi access point. Connect to
+        it and access the web interface to configure scanning and
+        deauthentication settings.
+      </p>
+
+      <h2>Legal and Ethical Considerations</h2>
+      <p>
+        <strong>Important:</strong> Using WiFi deauthers on networks you don't
+        own or have explicit permission to test is illegal in most
+        jurisdictions. These tools should only be used for:
+      </p>
+      <ul>
+        <li>Testing your own networks</li>
+        <li>Authorized penetration testing</li>
+        <li>Educational purposes in controlled environments</li>
+        <li>Security research with proper authorization</li>
+      </ul>
+
+      <h2>Conclusion</h2>
+      <p>
+        Building a WiFi deauther is an excellent way to learn about WiFi
+        security, network protocols, and embedded systems. Always ensure you
+        have proper authorization before testing any network.
+      </p>
+    </div>
+  </body>
+</html>
